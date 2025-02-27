@@ -31,6 +31,8 @@ Siga os passos abaixo para rodar a aplicação localmente:
 
 #### 1. Clone o repositório:
 
+[https://github.com/viniciusfernandes08/teste-front-end]
+
 #### 3. Instale as dependências com Yarn:
 No terminal, execute o comando:
 
