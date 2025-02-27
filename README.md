@@ -1,66 +1,79 @@
-# Teste Técnico Front-end BeTalent
+# Tabela de Funcionários 
 
-Este é um repositório para Testes Técnicos em Front-end da Be. Ele é destinado a pessoas que participam de nossos processos seletivos. 
+### Descrição
 
-Se você chegou até aqui por meio de um formulário de Teste Técnico, siga em frente. Caso contrário, acompanhe a BeTalent no [Linkedin](https://www.linkedin.com/company/betalenttech), [Instagram](https://www.instagram.com/betalent.tech/), [Facebook](https://web.facebook.com/bemobile.tech) ou na nossa newsletter [BeTalent Academy]([https://t.me/be_tech_community](https://beacademy.substack.com/)). Divulgamos novos processos seletivos por lá.
+Este projeto consiste em uma aplicação web que exibe uma tabela com dados de funcionários, incluindo **Foto**, **Nome**, **Cargo**, **Data de Admissão** e **Telefone**.O projeto simula uma API de funcionários usando **JSON Server** para fornecer dados e uma interface desenvolvida com React. O usuário pode pesquisar e filtrar os funcionários pelo **nome**, **cargo** e **telefone**. A interface é responsiva, garantindo uma boa experiência de uso em dispositivos móveis e desktop, com data e telefone formatados.
 
-## Desafio
+## Tecnologias
 
-O Teste Técnico para Front-End da BeTalent consiste em construir a visualização de uma tabela com dados que virão de uma API simulada, em json-server.
+Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-### Mockup
+- **React**
+- **JavaScript**
+- **Yarn** (gerenciador de pacotes)
+- **Axios** (biblioteca para fazer requisições HTTP)
+- **CSS** (estilos para a interface, com um arquivo styles.css importado)
+- **JSON Server** (para simulação de uma API RESTful local)
+- **Git** (controle de versão)
 
-Este é o [projeto em Figma](https://www.figma.com/file/yw6th52zE9bubewc6ayTg5/Teste-T%C3%A9cnico-Front-End-Be.?type=design&node-id=1%3A4&mode=dev&t=vVxs9eyKybrYmq4Z-1) para você se orientar. Nele, você encontrará estilos, visualização desktop e mobile e outros padrões que deverá seguir.
+### Pré-requisitos
 
-### Requisitos Gerais
+Certifique-se de ter os seguintes programas instalados em sua máquina antes de rodar o projeto:
 
-Deve-se utilizar React.js ou Vanilla JS (JavaScript puro) para construir o projeto.
+- **Node.js**
+- **Yarn**
+- **Git**
+- **JSON Server**
 
-É permitido utilizar libs externas, mas recomenda-se que seja o mínimo possível.
+### Instruções de Instalação
 
-A visualização deve ser responsiva.
+Siga os passos abaixo para rodar a aplicação localmente:
 
-A tabela deve conter as seguintes colunas:
+#### 1. Clone o repositório:
 
-- imagem (thumb do/a usuário/a);
-- nome;
-- cargo
-- data de admissão;
-- telefone.
+#### 3. Instale as dependências com Yarn:
+No terminal, execute o comando:
 
-Também deve ser possível realizar pesquisa na tabela por meio de um input. O input de pesquisa deve permitir filtrar dados por cargo, nome e telefone.
+`yarn install`
 
-Datas e telefones devem ser formatadas no front-end e não na API.
+#### 4. Instale o JSON Server:
+O JSON Server será utilizado para simular uma API RESTful local. Execute o comando abaixo para adicioná-lo ao projeto:
 
-Tenha instaladas em sua máquina as ferramentas [Git](https://git-scm.com/), [Node.js](https://nodejs.org/en/) e [Yarn](https://yarnpkg.com/) (ou outro gerenciador de pacotes de sua preferência) para poder trabalhar no projeto.
+`yarn add json-server`
 
-### Acesso aos dados da API simulada
+####  5. Rodar a API localmente com o JSON Server:
+Após a instalação do JSON Server, execute o seguinte comando para iniciar a API:
 
-Para ter acesso aos dados que alimentarão o projeto, faça o seguinte:
+`yarn json-server --watch db.json`
 
-1. caso você não tenha, instale o pacote [json-server](https://github.com/typicode/json-server);
-2. clone este repositório do GitHub em sua máquina: [https://github.com/BeMobile/desafio-front-end](https://github.com/BeMobile/desafio-front-end);
-3. entre na pasta do projeto, em sua máquina, e, por meio da linha de comando, execute o comando `json-server --watch db.json`, para consumir a API simulada;
-4. inicie a estrutura e o desenvolvimento do projeto.
+ **Atenção:** Mantenha o JSON Server rodando no terminal para que os dados da API sejam carregados e visualizados corretamente no projeto.
 
-É necessário deixar o json-server rodando no terminal para que os dados sejam visualizados no projeto.
+#### 6. Rodar a aplicação React:
+Execute o seguinte comando para rodar o projeto React
 
-Caso você tenha problemas com o json-server, tente rodá-lo com `npx json-server db.json` ou 
-com `yarn json-server <path>/db.json`, em que `<path>` é o caminho completo até o diretório em que o arquivo db.json está localizado. Se mesmo assim não funcionar, busque ajuda na web.
+`yarn dev`
 
-### Critérios de Avaliação
+Caso o comando acima não funcione, utilize:
 
-Em ordem de relevância, avaliaremos:
+`yarn start`
 
-1. lógica de programação;
-2. organização (do código e dos arquivos);
-3. CSS do projeto;
-4. README, que deve conter, pelo menos, as seguintes informações: sobre o projeto, pré-requisitos e instruções para rodar a aplicação.
+#### 7. Acesse a aplicação: 
+Após rodar os dois servidores (API e React), a aplicação React estará acessível em http://localhost:5173 e estará consumindo dados da API simulada rodando em http://localhost:3000.
 
-É um diferencial na avaliação o uso de TypeScript.
+### Funcionalidades:
 
-### Envio da Solução
+- **Visualização da tabela:** A tabela mostra uma lista de funcionários com informações como foto, nome, cargo, data de admissão e telefone.
 
-O projeto deverá ser hospedado em um repositório no seu GitHub. O link do repositório deverá ser fornecido por meio do formulário de Teste Técnico encaminhado ao seu e-mail. Não serão aceitos links de projetos enviados por outros meios.
+- **Busca e Filtro:** Utilize o campo de pesquisa para buscar funcionários por nome, cargo ou telefone.
 
-Demais instruções e regras serão instruídas nos formulários e nas comunicações do processo seletivo do qual você está participando.
+ **Atenção:**
+   - Na busca por **cargo** você deve usar o traço(-) em caso de cargos compostos, exemplo("Back-end") 
+   - Na busca por **telefone**, digite o código do país, o DDD do estado e os 9 dígitos, **sem espaços**, **traços** ou **parênteses**.
+
+- **Responsividade:** A aplicação é responsiva, adaptando-se dispositivos móveis com no máximo 375px de largura.
+
+### Detalhes adicionais
+
+O projeto foi desenvolvido seguindo as boas práticas do React, utilizando a organização por **componentes** como o **Card** e **Header**, por **páginas** como Home(nesse caso, uma única página Home), **services**(que gerencia a api e faz as requisições HTTP com **Axios**) e **utils**(que armazenam as funções de formatação de data e telefone).
+
+A estilização foi feita com um arquivo styles.css, que está no mesmo diretório dos arquivos **JSX**.
