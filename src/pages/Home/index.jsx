@@ -11,12 +11,15 @@ function Home() {
 
     useEffect(() => {
 
-        {/* Função para carregar os dados que vem da API */}
+        {/* Função para carregar os dados que vem da API, com um bloco try catch para tratar possíveis erros */}
         async function loadData() {
-             const {data} = await api.get('employees')
-
-             setEmployees(data)
-             setFilteredEmployees(data)
+            try {
+                const {data} = await api.get('employees')
+                   setEmployees(data)
+                   setFilteredEmployees(data)
+            } catch (error) {
+                console.error(error)
+            }
         }
 
         loadData()
